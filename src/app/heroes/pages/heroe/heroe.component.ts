@@ -24,6 +24,7 @@ export class HeroeComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
+
    this.activatedRoute.params
    .pipe(
      switchMap(({id}) => this.heroesService.getHeroePorId(id)),

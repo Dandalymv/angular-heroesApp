@@ -16,14 +16,24 @@ export class HeroesService {
   getHeroes(){
     return this.http.get<Heroe[]>(`${this.apiUrl}/heroes`)
   }
-//http://localhost:3000/heroes?q=a&_limit=6
   getHeroePorId(id: string){
-    // return this.http.get<Heroe[]>('http://localhost:3000/heroes/'+ id)
     return this.http.get<Heroe[]>(`${this.apiUrl}/heroes/${id}`)
     }
 
   getSugerencia(termino: string): Observable<Heroe[]>{
     return this.http.get<Heroe[]>(`${this.apiUrl}/heroes/?q=${ termino }&_limit=6`)
+  }
+
+  agregarHeroe(heroe: Heroe): Observable<Heroe>{
+    return this.http.post<Heroe>(`${this.apiUrl}/heroes`,heroe);
+  }
+
+  actualizarHeroe(heroe: Heroe): Observable<Heroe>{
+    return this.http.put<Heroe>(`${this.apiUrl}/heroes/${heroe.id}`,heroe);
+  }
+
+  borrarHeroe(id: string): Observable<any>{
+    return this.http.delete<any>(`${this.apiUrl}/heroes/${id}`);
   }
 
 }

@@ -9,8 +9,10 @@
     
     <div fxFlex="50" fxLayout="column">
 
-        <div fxLayout="row" fxLayout.sm="column" fxLayoutGap="40px">
-            <mat-form-field fxFlex="100" >
+        <div fxLayout="row" 
+        fxLayout.sm="column" 
+        fxLayoutGap="20px">
+            <mat-form-field fxFlex="100" fxLayout.xs="column">
                 <mat-label>Super Héroe</mat-label>
                 <input  matInput
                         type="text"
@@ -26,21 +28,21 @@
             </mat-form-field>
         </div>
         
-        <mat-form-field fxFlex="100">
+        <mat-form-field>
             <mat-label>Primea Aparición</mat-label>
             <input  matInput
                     type="text"
                     [(ngModel)]="heroe.first_appearance"
                     required>
         </mat-form-field>
-        <mat-form-field fxFlex="100">
+        <mat-form-field>
             <mat-label>Personajes</mat-label>
             <input  matInput
                     type="text"
                     [(ngModel)]="heroe.characters"
                     required>
         </mat-form-field>
-        <mat-form-field fxFlex="100">
+        <mat-form-field>
             <mat-label>Creador</mat-label>
             <mat-select required [(ngModel)]="heroe.publisher">
                 <mat-option *ngFor="let item of publisher" [value]="item.id">
@@ -48,7 +50,7 @@
                 </mat-option>
             </mat-select>
         </mat-form-field>
-        <mat-form-field fxFlex="100">
+        <mat-form-field>
             <mat-label>Foto Url</mat-label>
             <input  matInput
                     type="text"
